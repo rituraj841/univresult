@@ -15,10 +15,17 @@ app.use(session({secret: "secret",  resave : true,  saveUninitialized : false}))
 app.set('view engine', 'handlebars');
 app.engine('handlebars', hbars({}));
 
-app.get('/', routes.loginPageHandler);
-app.post('/toLanding', routes.landingPageHandler);
+app.get('/', routes.loginFormHandler);
+app.post('/toLanding', routes.authHandler);
 app.get('/registerForm', routes.registerFormHandler);
 app.post('/register', routes.registerUserHandler);
+
+app.get('/resultform', routes.resultFormHandler);
+app.post('/resultpage', routes.resultPageHandler);
+app.post('/marksEntry',routes.marksEntry);
+app.get('/marksentryform', routes.marksEntryForm);
+//app.get('/forgotForm', routes.forgotFormHandler);
+
 
 var port = process.env.PORT || 3000;
 app.listen(port, function(){

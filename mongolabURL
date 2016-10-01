@@ -1,0 +1,4 @@
+To connect using the mongo shell:
+mongo ds047666.mlab.com:47666/gola -u <dbuser> -p <dbpassword>
+To connect using a driver via the standard MongoDB URI (what's this?):
+  mongodb://<dbuser>:<dbpassword>@ds047666.mlab.com:47666/gola
