@@ -1,51 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-{{>includeHead}}
+{{>head}}
 <body>
-{{>includeMenu}}    
-<div id="page-content-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-           <div class="col-lg-12">
-                <h1> <code>Hello {{username}}!</code></h1>
-                  <p><h2>Your Scorecard.... 
-                  <h2></p>
-            </div>
-					<table align="left">
-					  <tr>
-					    <td><p><font size="4">Name:</font>
-					    {{candidateresult.name}}</p></td>		
-					  </tr>
-					  <tr>
-					    <td><p><font size="4">Roll No:</font>
-					  {{candidateresult.roll}}</p></td>
-					  </tr>
-					    <td><p><font size="4">Physics:</font>
-					  {{candidateresult.physics}}</p></td>
-					  </tr>
-					  <tr>
-					    <td><p><font size="4">Chemistry:</font>
-						{{candidateresult.chemistry}}</p></td>					 
-					  </tr>
-					  <tr>
-					    <td><p><font size="4">Mathematics:</font>
-					    {{candidateresult.mathematics}}</p></td>
-					  </tr>
-					  <tr>
-					    <td><p><font size="4">Computer:</font>
-					    {{candidateresult.computer}}</p></td>
-					    </tr>
-					  <tr>
-					    <td><p><font size="4">Total Marks:</font></p></td>
-					  </tr>
-					  <tr>
-					    <td><p><font size="4">Division:</font></p></td>
-					  </tr>
-					</table>
-       
-        </div>
+{{>menu}}    
+<br><br><br>
+<div class="container">
+    <div class="row">
+       <div class="well">
+            <h2> Scorecard <h2>
+            <h4> Name:  {{marks.xname}} </h4>
+            <h4>Roll: {{marks.roll}}</h4>
+
+			<table class="table">
+			  <tr>
+			    <td><p>Physics:  {{marks.physics}}</p></td>
+			  </tr>
+			  <tr>
+			    <td><p>Chemistry: {{marks.chemistry}}</p></td>		
+			  </tr>
+			  <tr>
+			    <td><p>Mathematics: {{marks.maths}}</p></td>
+			  </tr>
+			  <tr>
+			    <td><p>Computer:  {{marks.computer}}</p></td>
+			    </tr>
+			  <tr>
+			    <td><p>Total Marks: {{marks.total}}</p></td>
+			  </tr>
+			</table>
+		</div>
     </div>
 </div>
-{{>includeFoot}}
+
+{{>jsIncludes}}
 </body>
 </html>

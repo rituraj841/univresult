@@ -1,7 +1,7 @@
 var mongoose = require( 'mongoose' );
 var User = mongoose.model( 'User' );
 var mModel = mongoose.model('marksModel');
-var bcrypt = require('bcryptjs');
+
 
 exports.loginFormHandler = function (req, res){
 	req.session.destroy();
@@ -44,8 +44,22 @@ exports.resultFormHandler = function (req, res){
 //////////RESULT PAGE HANDLER/////////////////////////////
 exports.resultPageHandler = function(req,res){
   var rollReq = req.body.roll;
-  console.log("i am in result page handler" + rollReq);
-  res.render('resultPage.handlebars', {});
+  console.log("resultPageHandler Roll" + rollReq);
+
+  mModel.findOne({roll:rollReq}, function(err, mrksRec){
+    if (!err && mrksRec != null){
+      mrksRec.total = parseInt(mrksRec.physics) 
+                    + parseInt(mrksRec.chemistry) 
+                    + parseInt(mrksRec.maths) 
+                    + parseInt(mrksRec.computer) ;
+      console.log(" Record found. total=%s", mrksRec.total);
+      res.render('resultPage.handlebars', {marks:mrksRec});
+    }else{
+      res.render('landingpage.handlebars', {welcomeMessage:"No record found for Roll:" + rollReq});
+    }
+  });
+
+  
 }
 ///////////////////////////////////////////////////////////////////////
 exports.registerFormHandler = function(req, res){

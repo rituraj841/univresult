@@ -8,15 +8,12 @@
   },
   "keywords": [
     "node",
-    "bcryptjs",
     "cloud"
   ],
   "author": "Akhil",
   "license": "MIT",
   "dependencies": {
-    "mongodb": "latest",
     "mongoose": "latest",
-    "bcryptjs": "latest",
     "body-parser": "^1.14.2",
     "chalk": "^1.1.1",
     "express": "^4.13.3",
