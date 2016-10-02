@@ -3,7 +3,8 @@ var mongoose = require( 'mongoose' );
 
 
 //var dbURI = 'mongodb://127.0.0.1/resultdb';
-var dbURI =  'mongodb://edu:edu@ds015879.mlab.com:15879/edurekadb';
+//var dbURI =  'mongodb://edu:edu@ds015879.mlab.com:15879/edurekadb';
+var dbURI = 'mongodb://ram:ram@ds033337.mongolab.com:33337/square';
 console.log("Establishing connection to the DB");
 mongoose.connect(dbURI);
 mongoose.connection.on('connected', function () {
